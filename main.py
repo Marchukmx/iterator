@@ -5,16 +5,16 @@ class OddIterator:
         if n < 1:
             raise ValueError("Неправильне значення N")
         self.n = n
-        self.nepar = 1
+        self.current = 1
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        if self.nepar > self.n:
+        if self.current > self.n:
             raise StopIteration("Кінець ітерації")
-        odd_number = self.nepar
-        self.nepar += 2
+        odd_number = self.current
+        self.current += 2
         return odd_number
 try:
     n = int(input("Введіть значення N: "))
@@ -25,5 +25,3 @@ except ValueError as e:
     print("Помилка:", e)
 except StopIteration as e:
     print("Кінець ітерації:", e)
-
-
