@@ -19,3 +19,10 @@ my_list = [ 1,2,3,4,5]
 my_iter = MyIterator(my_list)
 for num in my_iter:
     print(num)
+
+def my_generator(data):
+    for item in data:
+        yield item
+
+for num in my_generator(my_list):
+    print(num)
