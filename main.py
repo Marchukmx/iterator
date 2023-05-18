@@ -20,9 +20,30 @@ my_iter = MyIterator(my_list)
 for num in my_iter:
     print(num)
 
+#генератор
+
 def my_generator(data):
     for item in data:
         yield item
 
 for num in my_generator(my_list):
     print(num)
+
+
+#КАЛЬКУЛЯТОР
+
+def calculator():
+    def add(a,b):
+        return a + b
+    def sub(a,b):
+        return a - b
+    def mult(a,b):
+        return a * b
+    def div(a,b):
+        if b != 0:
+            return a / b
+        else:
+            raise ValueError("ПОМИЛКА")
+    return add,sub,mult,div
+add,sub,mult,div = calculator()
+print(div(3,0))
